@@ -10,7 +10,7 @@ export default defineConfig({
     tailwindcss(),
     vitePluginSingleSpa({
       type: "mife",
-      serverPort: 4173,
+      serverPort: 5173,
       spaEntryPoints: "src/single-spa-app.tsx",
       projectId: "child-mfe",
       cssStrategy: "singleMife",
