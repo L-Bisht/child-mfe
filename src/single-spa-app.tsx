@@ -1,14 +1,21 @@
+// child/src/spa.tsx
 import React from "react";
 import ReactDOMClient from "react-dom/client";
 import singleSpaReact from "single-spa-react";
-import "./index.css";
-import rootComponent from "./App.tsx";
+import App from "./App";
 
-export const { bootstrap, mount, unmount } = singleSpaReact({
+const lifecycles = singleSpaReact({
   React,
   ReactDOMClient,
-  rootComponent,
-  errorBoundary() {
-    return <div>You got an error</div>;
+  rootComponent: App,
+  // ✅ THIS tells single-spa where to render
+  domElementGetter: () => {
+    const el = document.getElementById("single-spa-container");
+    if (!el) {
+      throw new Error("single-spa-container not found in DOM");
+    }
+    return el;
   },
 });
+
+export const { bootstrap, mount, unmount } = lifecycles;
