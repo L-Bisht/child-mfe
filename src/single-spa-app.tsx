@@ -1,8 +1,9 @@
-// child/src/spa.tsx
+// child/src/single-spa-app.tsx
 import React from "react";
 import ReactDOMClient from "react-dom/client";
 import singleSpaReact from "single-spa-react";
 import App from "./App";
+import "./index.css";
 
 const lifecycles = singleSpaReact({
   React,
