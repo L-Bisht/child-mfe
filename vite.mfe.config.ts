@@ -1,4 +1,4 @@
-// vite.mfe.config.ts - For single-spa MFE
+// vite.mfe.config.ts - For single-spa MFE with proper CSS bundling
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
@@ -24,5 +24,8 @@ export default defineConfig({
         },
       },
     },
+    // Ensure CSS is handled properly with Tailwind v4
+    cssCodeSplit: false,
+    sourcemap: false,
   },
 });

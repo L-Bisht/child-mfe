@@ -4,3 +4,8 @@
   margin: 0;
   padding: 0;
 }
+
+/* Ensure styles are injected as side effect */
+:root {
+  --tw-init: 1;
+}
