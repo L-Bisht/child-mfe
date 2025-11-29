@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/standalone",
+  "rewrites": [
+    {
+      "source": "/mfe/:path*",
+      "destination": "/mfe/:path*"
+    }
+  ]
+}
