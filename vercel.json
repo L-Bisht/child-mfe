@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build && mkdir -p dist/standalone/mfe && cp dist/mfe/* dist/standalone/mfe/",
   "outputDirectory": "dist/standalone",
   "headers": [
     {
@@ -18,12 +18,6 @@
           "value": "*"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/mfe/:path*",
-      "destination": "/mfe/:path*"
     }
   ]
 }
