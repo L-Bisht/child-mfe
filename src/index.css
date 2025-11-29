@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
-* {
+.child-mfe {
+  all: initial;
+  display: contents;
+}
+
+.child-mfe * {
   margin: 0;
   padding: 0;
 }

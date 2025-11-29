@@ -5,6 +5,22 @@ import tailwindcss from "@tailwindcss/vite";
 import vitePluginSingleSpa from "vite-plugin-single-spa";
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: "index.html",
+        "single-spa-app": "src/single-spa-app.tsx",
+      },
+      output: [
+        {
+          entryFileNames: "[name].js",
+          format: "umd",
+          dir: "dist",
+          name: "ChildMFE",
+        },
+      ],
+    },
+  },
   plugins: [
     react(),
     tailwindcss(),
